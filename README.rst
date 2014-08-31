@@ -6,6 +6,10 @@ Class repo for CodeFellows Foundations II Python class: Sept 2014
 
 This reposotory will be used for students to submit homework, and instructors to share solutions, etc.
 
+You can find the Instuction materials at:
+
+`Class github pages <http://codefellows.github.io/sea-f2-python-sept14/>`_
+
 How to use this repo:
 =====================
 
