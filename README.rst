@@ -1,8 +1,9 @@
-####################
-sea-f2-python-sept14
-####################
+######################
+Code Fellows F2 Python
+######################
 
-Class repo for CodeFellows Foundations II Python class: sea-c28 (Nov-Dec, 2014)
+Class repo for Code Fellows Foundations II Python class: sea-c28 (Nov-Dec,
+2014)
 
 This reposotory will be used for students to submit homework, and instructors
 to share solutions, etc.
