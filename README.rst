@@ -2,14 +2,14 @@
 sea-f2-python-sept14
 ####################
 
-Class repo for CodeFellows Foundations II Python class: # ADD A CLASS CODE AND DATE RANGE HERE
+Class repo for CodeFellows Foundations II Python class: sea-c28 (Nov-Dec, 2014)
 
 This reposotory will be used for students to submit homework, and instructors
 to share solutions, etc.
 
 You can find the Instuction materials at:
 
-`Class github pages <>`_ <- Make this a proper link to the gh-pages for the new student repository
+`Class github pages <http://codefellows.github.io/sea-c28-students>`_
 
 How to use this repo:
 =====================
