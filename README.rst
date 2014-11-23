@@ -5,6 +5,8 @@ Code Fellows F2 Python
 Class repo for Code Fellows Foundations II Python class: sea-c28 (Nov-Dec,
 2014)
 
+[![Gitter chat](https://badges.gitter.im/codefellows/sea-c28-students.png)](https://gitter.im/codefellows/sea-c28-students)
+
 This reposotory will be used for students to submit homework, and instructors
 to share solutions, etc.
 
