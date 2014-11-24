@@ -83,13 +83,13 @@ to the original copy of the material in the ``codefellows`` account.
 
 .. code-block:: bash
 
-  $ git remote add upstream https://github.com/codefellows/sea-f2-python-sept14.git
+    $ git remote add upstream https://github.com/codefellows/sea-f2-python-sept14.git
 
-  $ git remote -v
-  origin  https://github.com/PythonCHB/sea-f2-python-sept14.git (fetch)
-  origin  https://github.com/PythonCHB/sea-f2-python-sept14.git (push)
-  upstream  https://github.com/codefellows/sea-f2-python-sept14.git (fetch)
-  upstream  https://github.com/codefellows/sea-f2-python-sept14.git (push)
+    $ git remote -v
+    origin  https://github.com/PythonCHB/sea-f2-python-sept14.git (fetch)
+    origin  https://github.com/PythonCHB/sea-f2-python-sept14.git (push)
+    upstream  https://github.com/codefellows/sea-f2-python-sept14.git (fetch)
+    upstream  https://github.com/codefellows/sea-f2-python-sept14.git (push)
 
 .. nextslide:: Fetching Everything.
 
@@ -106,13 +106,13 @@ Then you can see the branches you have locally available:
 
 .. code-block:: bash
 
-  $ git branch -a
-  * master
-    remotes/origin/HEAD -> origin/master
-    remotes/origin/gh-pages
-    remotes/origin/master
-    remotes/upstream/gh-pages
-    remotes/upstream/master
+    $ git branch -a
+    * master
+      remotes/origin/HEAD -> origin/master
+      remotes/origin/gh-pages
+      remotes/origin/master
+      remotes/upstream/gh-pages
+      remotes/upstream/master
 
 (the gh-pages branch is used to publish these notes)
 
@@ -135,17 +135,17 @@ Then, fetch the upstream master branch and merge it into your master:
 
 .. code-block:: bash
 
-  $ git fetch upstream master
-  From https://github.com/codefellows/sea-f2-python-sept14
-   * branch            master     -> FETCH_HEAD
+    $ git fetch upstream master
+    From https://github.com/codefellows/sea-f2-python-sept14
+     * branch            master     -> FETCH_HEAD
 
-  $ git merge upstream/master
-  Updating 3239de7..9ddbdbb
-  Fast-forward
-   Examples/README.rst              |  4 ++++
-  ...
-   create mode 100644 Examples/README.rst
-  ...
+    $ git merge upstream/master
+    Updating 3239de7..9ddbdbb
+    Fast-forward
+     Examples/README.rst              |  4 ++++
+    ...
+     create mode 100644 Examples/README.rst
+    ...
 
 NOTE: you can do that in one step with:
 
@@ -940,15 +940,12 @@ Exercises
   * ``10 % 7 == 3``
   * ``14 % 7 == 0``
 
-*  Write a program that prints the numbers from 1 to 100 inclusive. But for
-   multiples of three print "Fizz" instead of the number and for the
-   multiples of five print "Buzz". For numbers which are multiples of both
-   three and five print "FizzBuzz" instead.
-* Re-write a couple of CodingBat exercises, using a conditional expression
-* Re-write a couple of CodingBat exercises, returning the direct boolean results
-
-use whichever you like, or the ones in:
-:download:`codingbat.rst <../code/session02/codingbat.rst>`
+* Write a program that prints the numbers from 1 to 100 inclusive. But for
+  multiples of three print "Fizz" instead of the number and for the multiples
+  of five print "Buzz". For numbers which are multiples of both three and five
+  print "FizzBuzz" instead.
+* If you finish that, try your hand at writing solutions to one or more of the
+  problems in :download:`codingbat.rst <../code/session02/codingbat.rst>`
 
 
 Code Structure, Modules, and Namespaces
@@ -1111,12 +1108,15 @@ Import
 When you import a module, or a symbol from a module, the Python code is
 *compiled* to **bytecode**.
 
-The result is a ``module.pyc`` file.
+.. rst-class:: build
+.. container::
 
-This process **executes all code at the module scope**.
+    The result is a ``module.pyc`` file.
 
-For this reason, it is good to avoid module-scope statements that have global
-side-effects.
+    This process **executes all code at the module scope**.
+
+    For this reason, it is good to avoid module-scope statements that have
+    global side-effects.
 
 
 .. nextslide:: Re-import
@@ -1147,39 +1147,49 @@ There are a few ways to do this:
 
 * ``$ python hello.py``   -- must be in current working directory
 * ``$ python -m hello``   -- any module on PYTHONPATH anywhere on the system
-* ``$ ./hello.py``        -- put ``#!/usr/env/python``  at top of module (Unix)
-* ``In [149]: run hello.py``     -- at the IPython prompt -- running a module brings its names into the interactive namespace
+* ``$ ./hello.py``        -- put ``#!/usr/bin/env python``  at top of module
+  (Unix)
+* ``In [149]: run hello.py``     -- at the IPython prompt -- running a module
+  brings its names into the interactive namespace
 
 
 .. nextslide:: Running a Module
 
 Like importing, running a module executes all statements at the module level.
 
-But there's an important difference.
+.. rst-class:: build
+.. container::
 
-When you *import* a module, the value of the symbol ``__name__`` in the module
-is the same as the filename.
+    But there's an important difference.
 
-When you *run* a module, the value of the symbol ``__name__`` is ``__main__``.
+    When you *import* a module, the value of the symbol ``__name__`` in the
+    module is the same as the filename.
 
-This allows you to create blocks of code that are executed *only when you run a
-module*
+    When you *run* a module, the value of the symbol ``__name__`` is
+    ``__main__``.
 
-.. code-block:: python
+    This allows you to create blocks of code that are executed *only when you
+    run a module*
 
-    if __name__ == '__main__':
-        # Do something interesting here
-        # It will only happen when the module is run
+    .. code-block:: python
+
+        if __name__ == '__main__':
+            # Do something interesting here
+            # It will only happen when the module is run
 
 .. nextslide:: "main" blocks
 
 This is useful in a number of cases.
 
-You can put code here that lets your module be a utility script
+.. rst-class:: build
+.. container::
 
-You can put code here that demonstrates the functions contained in your module
+    You can put code here that lets your module be a utility script
 
-You can put code here that proves that your module works.
+    You can put code here that demonstrates the functions contained in your
+    module
+
+    You can put code here that proves that your module works.
 
 .. ifslides::
 
@@ -1212,6 +1222,8 @@ your code.
 
 In-Class Lab
 ============
+
+.. rst-class:: center large
 
 Import Interactions
 
@@ -1275,7 +1287,9 @@ You wouldn't want to import * those!
 Homework
 ========
 
-You have two tasks to complete by next class:
+.. rst-class:: center large
+
+Two Tasks by Monday
 
 Task 1
 ------
@@ -1288,6 +1302,9 @@ The Ackermann function, A(m, n), is defined::
         A(m−1, A(m, n−1))   if  m > 0  and  n > 0.
 
 See http://en.wikipedia.org/wiki/Ackermann_function.
+
+Make a new branch ``session02`` in your repository.  Do your work for this
+session on that branch.
 
 Create a new module called ``ack.py`` in a ``session02`` folder in your student
 folder. In that module, write a function named ``ack`` that performs

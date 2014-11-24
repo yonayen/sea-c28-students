@@ -279,13 +279,13 @@ to work.</p>
 <p>That last thing you see, <tt class="docutils literal"><span class="pre">&gt;&gt;&gt;</span></tt> is the &#8220;Python prompt&#8221;.</p>
 <p>This is where you type code.</p>
 <p>Try it out:</p>
-<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s">u&quot;hello world!&quot;</span>
+<div class="highlight-pycon"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">u&quot;hello world!&quot;</span><span class="p">)</span>
 <span class="go">hello world!</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span>
 <span class="go">9</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span> <span class="o">**</span> <span class="mi">8</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="go">255</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s">u&quot;one string&quot;</span> <span class="o">+</span> <span class="s">u&quot; plus another&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s">u&quot;one string&quot;</span> <span class="o">+</span> <span class="s">u&quot; plus another&quot;</span><span class="p">)</span>
 <span class="go">one string plus another</span>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
@@ -578,7 +578,7 @@ object?   -&gt; Details about <span class="s1">&#39;object&#39;</span>, use <spa
 <p>Statements:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [6]: </span><span class="c"># statements do not return a value, may contain an expression</span>
 
-<span class="gp">In [7]: </span><span class="k">print</span> <span class="s">u&quot;this&quot;</span>
+<span class="gp">In [7]: </span><span class="k">print</span><span class="p">(</span><span class="s">u&quot;this&quot;</span><span class="p">)</span>
 <span class="go">this</span>
 
 <span class="gp">In [8]: </span><span class="n">line_count</span> <span class="o">=</span> <span class="mi">42</span>
@@ -586,20 +586,32 @@ object?   -&gt; Details about <span class="s1">&#39;object&#39;</span>, use <spa
 <span class="gp">In [9]:</span>
 </pre></div>
 </div>
+<p>In Python 2.x, printing is a statement. In Python 3, it was changed to a
+function.</p>
+<div class="build container">
+<p>You can get the Python 3 behavior in Python 2.6+ using the <tt class="docutils literal"><span class="pre">__future__</span></tt>
+module.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+</pre></div>
+</div>
+<p>For purposes of writing cross-compatible code, this is a good idea.  Please
+use this idiom in your code.</p>
+</div>
 <p>It&#8217;s kind of obvious, but handy when playing with code:</p>
-<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="k">print</span> <span class="s">u&quot;something&quot;</span>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="gp">In [2]: </span><span class="k">print</span><span class="p">(</span><span class="s">u&quot;something&quot;</span><span class="p">)</span>
 <span class="go">something</span>
 </pre></div>
 </div>
 <p>You can print multiple things:</p>
-<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [2]: </span><span class="k">print</span> <span class="s">u&quot;the value is&quot;</span><span class="p">,</span> <span class="mi">5</span>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [3]: </span><span class="k">print</span><span class="p">(</span><span class="s">u&quot;the value is&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="go">the value is 5</span>
 </pre></div>
 </div>
-<p>Python automatically adds a newline, which you can suppress with a comma:</p>
+<p>Python automatically adds a newline, which you can change with <tt class="docutils literal"><span class="pre">end</span></tt> argument:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [12]: </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">print</span> <span class="s">u&quot;the value is&quot;</span><span class="p">,</span>
-<span class="gp">   ....: </span>    <span class="k">print</span> <span class="n">i</span>
+<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="s">u&quot;the value is&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39; &#39;</span><span class="p">)</span>
+<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="gp">   ....:</span>
 <span class="go">the value is 0</span>
 <span class="go">the value is 1</span>
@@ -609,12 +621,12 @@ object?   -&gt; Details about <span class="s1">&#39;object&#39;</span>, use <spa
 </pre></div>
 </div>
 <p>Any python object can be printed (though it might not be pretty...)</p>
-<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="k">class</span> <span class="nc">bar</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="k">class</span> <span class="nc">Bar</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="gp">   ...: </span>    <span class="k">pass</span>
 <span class="gp">   ...:</span>
 
-<span class="gp">In [2]: </span><span class="k">print</span> <span class="n">bar</span>
-<span class="go">&lt;class &#39;__main__.bar&#39;&gt;</span>
+<span class="gp">In [2]: </span><span class="k">print</span><span class="p">(</span><span class="n">Bar</span><span class="p">)</span>
+<span class="go">&lt;class &#39;__main__.Bar&#39;&gt;</span>
 </pre></div>
 </div>
 <p>Blocks of code are delimited by a colon and indentation:</p>
@@ -624,7 +636,7 @@ object?   -&gt; Details about <span class="s1">&#39;object&#39;</span>, use <spa
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">try</span><span class="p">:</span>
@@ -641,20 +653,20 @@ object?   -&gt; Details about <span class="s1">&#39;object&#39;</span>, use <spa
 <p><strong>TABS ARE NOT SPACES</strong></p>
 <p>These two blocks look the same:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>But they are not:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-\<span class="n">s</span>\<span class="n">s</span>\<span class="n">s</span>\<span class="n">sprint</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+\<span class="n">s</span>\<span class="n">s</span>\<span class="n">s</span>\<span class="n">sprint</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-\<span class="n">tprint</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+\<span class="n">tprint</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>ALWAYS INDENT WITH 4 SPACES</strong></p>
@@ -810,7 +822,7 @@ it is bound.</p>
 <span class="gh">Out[37]: </span><span class="go">3</span>
 </pre></div>
 </div>
-<p>also: <tt class="docutils literal"><span class="pre">-=,</span> <span class="pre">*=,</span> <span class="pre">/=,</span> <span class="pre">**=,</span> <span class="pre">\%=</span></tt></p>
+<p>also: <tt class="docutils literal"><span class="pre">-=,</span> <span class="pre">*=,</span> <span class="pre">/=,</span> <span class="pre">**=,</span> <span class="pre">%=</span></tt></p>
 <p>(not quite &#8211; really in-place assignment for mutables....)</p>
 </div>
 <div class="section" id="multiple-assignment">
@@ -1050,7 +1062,7 @@ def       for       lambda    try
 </pre></div>
 </div>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [14]: </span><span class="k">def</span> <span class="nf">a_function</span><span class="p">(</span><span class="k">else</span><span class="o">=</span><span class="s">u&#39;something&#39;</span><span class="p">):</span>
-<span class="gp">   ....: </span>    <span class="k">print</span> <span class="k">else</span>
+<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="k">else</span><span class="p">)</span>
 <span class="gp">   ....:</span>
 <span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-14-1dbbea504a9e&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="k">def</span> <span class="nf">a_function</span><span class="p">(</span><span class="k">else</span><span class="o">=</span><span class="s">u&#39;something&#39;</span><span class="p">):</span>
@@ -1148,7 +1160,7 @@ or in multiple parts of the program.</p>
 </pre></div>
 </div>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [18]: </span><span class="k">def</span> <span class="nf">simple</span><span class="p">():</span>
-<span class="gp">   ....: </span>    <span class="k">print</span> <span class="s">u&quot;I am a simple function&quot;</span>
+<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="s">u&quot;I am a simple function&quot;</span><span class="p">)</span>
 <span class="gp">   ....:</span>
 
 <span class="gp">In [19]: </span><span class="n">simple</span><span class="p">()</span>
@@ -1173,8 +1185,8 @@ or in multiple parts of the program.</p>
 <p>functions call functions &#8211; this makes an execution stack &#8211; that&#8217;s all a trace
 back is</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [5]: </span><span class="k">def</span> <span class="nf">exceptional</span><span class="p">():</span>
-<span class="gp">   ...: </span>    <span class="k">print</span> <span class="s">u&quot;I am exceptional!&quot;</span>
-<span class="gp">   ...: </span>    <span class="k">print</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="s">u&quot;I am exceptional!&quot;</span><span class="p">)</span>
+<span class="gp">   ...: </span>    <span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">   ...:</span>
 <span class="gp">In [6]: </span><span class="k">def</span> <span class="nf">passive</span><span class="p">():</span>
 <span class="gp">   ...: </span>    <span class="k">pass</span>
@@ -1204,8 +1216,8 @@ back is</p>
 
 <span class="nn">&lt;ipython-input-5-d8100c70edef&gt;</span> in <span class="ni">exceptional</span><span class="nt">()</span>
 <span class="g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">exceptional</span><span class="p">():</span>
-<span class="g-Whitespace">      </span><span class="mi">2</span>     <span class="k">print</span> <span class="s">u&quot;I am exceptional!&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">print</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="g-Whitespace">      </span><span class="mi">2</span>     <span class="k">print</span><span class="p">(</span><span class="s">u&quot;I am exceptional!&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
 <span class="g-Whitespace">      </span><span class="mi">4</span>
 
 <span class="ne">ZeroDivisionError</span>: integer division or modulo by zero
@@ -1226,7 +1238,7 @@ back is</p>
 <span class="gp">   ...:</span>
 <span class="gp">In [10]: </span><span class="n">fun</span><span class="p">()</span>
 <span class="gp">In [11]: </span><span class="n">result</span> <span class="o">=</span> <span class="n">fun</span><span class="p">()</span>
-<span class="gp">In [12]: </span><span class="k">print</span> <span class="n">result</span>
+<span class="gp">In [12]: </span><span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 <span class="go">None</span>
 </pre></div>
 </div>
@@ -1238,7 +1250,7 @@ back is</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [14]: </span><span class="k">def</span> <span class="nf">no_error</span><span class="p">():</span>
 <span class="gp">   ....: </span>    <span class="k">return</span> <span class="s">u&#39;done&#39;</span>
 <span class="gp">   ....: </span>    <span class="c"># no more will happen</span>
-<span class="gp">   ....: </span>    <span class="k">print</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">   ....:</span>
 <span class="gp">In [15]: </span><span class="n">no_error</span><span class="p">()</span>
 <span class="gh">Out[15]: </span><span class="go">u&#39;done&#39;</span>
@@ -1269,7 +1281,7 @@ back is</p>
 <strong>parameters</strong></p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [22]: </span><span class="k">def</span> <span class="nf">fun</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="n">q</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
-<span class="gp">   ....: </span>    <span class="k">print</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">q</span>
+<span class="gp">   ....: </span>    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
 <span class="gp">   ....:</span>
 </pre></div>
 </div>
@@ -1290,11 +1302,11 @@ back is</p>
 <p>In order to do anything interesting at all (including this week&#8217;s homework), you need to be able to make a decision.</p>
 <div class="highlight-python"><div class="highlight"><pre>In [12]: def test(a):
    ....:     if a == 5:
-   ....:         print u&quot;that&#39;s the value I&#39;m looking for!&quot;
+   ....:         print(u&quot;that&#39;s the value I&#39;m looking for!&quot;)
    ....:     elif a == 7:
-   ....:         print u&quot;that&#39;s an OK number&quot;
+   ....:         print(u&quot;that&#39;s an OK number&quot;)
    ....:     else:
-   ....:         print u&quot;that number won&#39;t do!&quot;
+   ....:         print(u&quot;that number won&#39;t do!&quot;)
 
 In [13]: test(5)
 that&#39;s the value I&#39;m looking for!
