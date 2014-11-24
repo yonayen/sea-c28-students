@@ -81,11 +81,9 @@
 <p>Homework Questions?</p>
 <p>If it seems harder than it should be &#8211; it is!</p>
 <p>My Solution to the trigram:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>(<tt class="docutils literal"><span class="pre">dict.setdefault()</span></tt>  trick...)</li>
 </ul>
-</div></blockquote>
 <p><tt class="docutils literal"><span class="pre">global</span></tt> keyword?</p>
 </div>
 <div class="section" id="unicode-notes">
@@ -113,11 +111,10 @@
 <p>More about Python implementation than OO design/strengths/weaknesses</p>
 <p>One reason for this:</p>
 <p>Folks can&#8217;t even agree on what OO &#8220;really&#8221; means</p>
-<p>See: The Quarks of Object-Oriented Development</p>
+<p>See:</p>
 <blockquote>
-<div><ul class="simple">
-<li>Deborah J. Armstrong</li>
-</ul>
+<div><p>The Quarks of Object-Oriented Development</p>
+<p class="attribution">&mdash;Deborah J. Armstrong</p>
 </div></blockquote>
 <p><a class="reference external" href="http://agp.hx0.ru/oop/quarks.pdf">http://agp.hx0.ru/oop/quarks.pdf</a></p>
 <p>Is Python a &#8220;True&#8221; Object-Oriented Language?</p>
@@ -152,25 +149,21 @@ that use&#8221;</div></blockquote>
 <p>This is the core of &#8220;encapsulation&#8221;</p>
 <p>In Python: just another namespace.</p>
 <p>The OO buzzwords:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>data abstraction</li>
 <li>encapsulation</li>
 <li>modularity</li>
 <li>polymorphism</li>
 <li>inheritance</li>
 </ul>
-</div></blockquote>
 <p>Python does all of this, though it doesn&#8217;t enforce it.</p>
 <p>You can do OO in C</p>
 <p>(see the GTK+ project)</p>
 <p>&#8220;OO languages&#8221; give you some handy tools to make it easier (and safer):</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>polymorphism (duck typing gives you this anyway)</li>
 <li>inheritance</li>
 </ul>
-</div></blockquote>
 <p>OO is the dominant model for the past couple decades</p>
 <p>You will need to use it:</p>
 <ul class="simple">
@@ -228,7 +221,7 @@ as a variable, or single object, as opposed to a ...</dd>
 </div>
 <p>Basic Structure of a real class:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<span class="c"># everything defined in here is in the class namespace</span>
+    <span class="c"># everything defined in here is in the class namespace</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
@@ -458,15 +451,13 @@ automatically when you instantiate an instance.</p>
 <p>When you access an attribute:</p>
 <p><tt class="docutils literal"><span class="pre">An_Instance.something</span></tt></p>
 <p>Python looks for it in this order:</p>
-<blockquote>
-<div><ul class="simple">
-<li>Is it an instance attribute ?</li>
-<li>Is it a class attribute ?</li>
-<li>Is it a superclass attribute ?</li>
-<li>Is it a super-superclass attribute ?</li>
+<ul class="simple">
+<li>Is it an instance attribute?</li>
+<li>Is it a class attribute?</li>
+<li>Is it a superclass attribute?</li>
+<li>Is it a super-superclass attribute?</li>
 <li>...</li>
 </ul>
-</div></blockquote>
 <p>It can get more complicated...</p>
 <p><a class="reference external" href="http://www.python.org/getit/releases/2.3/mro/">http://www.python.org/getit/releases/2.3/mro/</a></p>
 <p><a class="reference external" href="http://python-history.blogspot.com/2010/06/method-resolution-order.html">http://python-history.blogspot.com/2010/06/method-resolution-order.html</a></p>
@@ -475,8 +466,7 @@ automatically when you instantiate an instance.</p>
 <h3>What are Python classes, really?<a class="headerlink" href="#what-are-python-classes-really" title="Permalink to this headline">¶</a></h3>
 <p>Putting aside the OO theory...</p>
 <p>Python classes are:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>Namespaces<ul>
 <li>One for the class object</li>
 <li>One for each instance</li>
@@ -485,7 +475,6 @@ automatically when you instantiate an instance.</p>
 <li>Attribute resolution order</li>
 <li>Auto tacking-on of <tt class="docutils literal"><span class="pre">self</span></tt> when methods are called</li>
 </ul>
-</div></blockquote>
 <p>That&#8217;s about it &#8211; really!</p>
 </div>
 <div class="section" id="type-based-dispatch">
@@ -499,12 +488,10 @@ automatically when you instantiate an instance.</p>
 </div>
 <p>Usually better to use &#8220;duck typing&#8221; (polymorphism)</p>
 <p>But when it&#8217;s called for:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><tt class="docutils literal"><span class="pre">isinstance()</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">issubclass()</span></tt></li>
 </ul>
-</div></blockquote>
 <p>GvR: &#8220;Five Minute Multi- methods in Python&#8221;:</p>
 <p><a class="reference external" href="http://www.artima.com/weblogs/viewpost.jsp?thread=101605">http://www.artima.com/weblogs/viewpost.jsp?thread=101605</a></p>
 <p><a class="reference external" href="http://www.python.org/getit/releases/2.3/mro/">http://www.python.org/getit/releases/2.3/mro/</a></p>

@@ -669,8 +669,7 @@ not x               return True,
 <p class="center large">Better With Booleans</p>
 <div class="section" id="id2">
 <h3>Exercises<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>Look up the <tt class="docutils literal"><span class="pre">%</span></tt>  operator. What do these do?<ul>
 <li><tt class="docutils literal"><span class="pre">10</span> <span class="pre">%</span> <span class="pre">7</span> <span class="pre">==</span> <span class="pre">3</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">14</span> <span class="pre">%</span> <span class="pre">7</span> <span class="pre">==</span> <span class="pre">0</span></tt></li>
@@ -683,7 +682,6 @@ three and five print &#8220;FizzBuzz&#8221; instead.</li>
 <li>Re-write a couple of CodingBat exercises, using a conditional expression</li>
 <li>Re-write a couple of CodingBat exercises, returning the direct boolean results</li>
 </ul>
-</div></blockquote>
 <p>use whichever you like, or the ones in:
 <a class="reference download internal" href="_downloads/codingbat.rst"><tt class="xref download docutils literal"><span class="pre">codingbat.rst</span></tt></a></p>
 </div>
@@ -888,7 +886,9 @@ your code.</p>
 </pre></div>
 </div>
 <p>See <a class="reference external" href="http://en.wikipedia.org/wiki/Ackermann_function">http://en.wikipedia.org/wiki/Ackermann_function</a>.</p>
-<p>Create a new module called <tt class="docutils literal"><span class="pre">ack.py</span></tt> in a <tt class="docutils literal"><span class="pre">session02</span></tt> folder in your student folder. In that module, write a function named <tt class="docutils literal"><span class="pre">ack</span></tt> that performs Ackermann&#8217;s function.</p>
+<p>Create a new module called <tt class="docutils literal"><span class="pre">ack.py</span></tt> in a <tt class="docutils literal"><span class="pre">session02</span></tt> folder in your student
+folder. In that module, write a function named <tt class="docutils literal"><span class="pre">ack</span></tt> that performs
+Ackermann&#8217;s function.</p>
 <ul class="simple">
 <li>Write a good <tt class="docutils literal"><span class="pre">docstring</span></tt> for your function according to PEP 257.</li>
 <li>Ackermann&#8217;s function is not defined for input values less than 0.  Validate
@@ -897,8 +897,9 @@ inputs to your function and return None if they are negative.</li>
 <p>The wikipedia page provides a table of output values for inputs between 0 and
 4. Using this table, add a <tt class="docutils literal"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></tt> block to test your
 function.</p>
-<p>Test each pair of inputs between 0 and 4 and assert that the result produced by
-your function is the result expected by the wikipedia table.</p>
+<p>Test each pair of inputs for <tt class="docutils literal"><span class="pre">m</span></tt> between 0 and 3 and <tt class="docutils literal"><span class="pre">n</span></tt> between 0 and 4.
+Assert that the result produced by your function is the result expected by
+the wikipedia table. What happens for values of <tt class="docutils literal"><span class="pre">m</span></tt> greater than 3?</p>
 <p>When your module is run from the command line, these tests should be executed.
 If they all pass, print &#8220;All Tests Pass&#8221; as the result.</p>
 <p>Add your new module to your git clone and commit frequently while working on

@@ -64,12 +64,13 @@
             
   <div class="section" id="unicode-in-python-2">
 <span id="unicode-supplement"></span><h1>Unicode in Python 2<a class="headerlink" href="#unicode-in-python-2" title="Permalink to this headline">¶</a></h1>
-<p>A quick run-down of Unicode, its use in Python 2, and some of the gotchas that arise.</p>
-<blockquote>
-<div><ul class="simple">
+<div class="left container">
+<p>A quick run-down of Unicode, its use in Python 2, and some of the gotchas
+that arise.</p>
+<ul class="simple">
 <li>Chris Barker</li>
 </ul>
-</div></blockquote>
+</div>
 <div class="section" id="history">
 <h2>History<a class="headerlink" href="#history" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="what-the-heck-is-unicode-anyway">
@@ -353,8 +354,7 @@ intentions clear, too.</p>
 <p>But: some more obscure calls don&#8217;t support unicode filenames:</p>
 <p><tt class="docutils literal"><span class="pre">os.statvfs()</span></tt> (<a class="reference external" href="http://bugs.python.org/issue18695">http://bugs.python.org/issue18695</a>)</p>
 <p>Exception messages:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>Py2 Exceptions use str when they print messages.</li>
 <li>But what if you pass in a unicode object?<ul>
 <li>It is encoded with the default encoding.</li>
@@ -362,8 +362,8 @@ intentions clear, too.</p>
 </li>
 <li><tt class="docutils literal"><span class="pre">UnicodeDecodeError</span></tt> Inside an Exception????</li>
 </ul>
-<p>NOPE: it swallows it instead.</p>
-</div></blockquote>
+<blockquote>
+<div>NOPE: it swallows it instead.</div></blockquote>
 <p><a class="reference download internal" href="../_downloads/exception_test.py"><tt class="xref download docutils literal"><span class="pre">exception_test.py</span></tt></a>.</p>
 </div>
 <div class="section" id="unicode-in-python-3">
@@ -384,30 +384,27 @@ intentions clear, too.</p>
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="basic-unicode-lab">
 <h3>Basic Unicode LAB<a class="headerlink" href="#basic-unicode-lab" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Find some nifty non-ascii characters you might use.</p>
 <ul class="simple">
-<li>Find some nifty non-ascii characters you might use.<ul>
 <li>Create a unicode object with them in two different ways.</li>
 <li><a class="reference download internal" href="../_downloads/hello_unicode.py"><tt class="xref download docutils literal"><span class="pre">here</span></tt></a> is one example</li>
 </ul>
 </li>
-<li>Read the contents into unicode objects:</li>
-</ul>
-<blockquote>
-<div><ul class="simple">
+<li><p class="first">Read the contents into unicode objects:</p>
+<ul class="simple">
 <li><a class="reference download internal" href="../_downloads/ICanEatGlass.utf8.txt"><tt class="xref download docutils literal"><span class="pre">ICanEatGlass.utf8.txt</span></tt></a></li>
 <li><a class="reference download internal" href="../_downloads/ICanEatGlass.utf16.txt"><tt class="xref download docutils literal"><span class="pre">ICanEatGlass.utf16.txt</span></tt></a></li>
 </ul>
-</div></blockquote>
 <p>and/ or</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><a class="reference download internal" href="../_downloads/text.utf8"><tt class="xref download docutils literal"><span class="pre">text.utf8</span></tt></a></li>
 <li><a class="reference download internal" href="../_downloads/text.utf16"><tt class="xref download docutils literal"><span class="pre">text.utf16</span></tt></a></li>
 <li><a class="reference download internal" href="../_downloads/text.utf32"><tt class="xref download docutils literal"><span class="pre">text.utf32</span></tt></a></li>
 </ul>
-</div></blockquote>
-<ul class="simple">
-<li>write some of the text from the first exercise to file &#8211; read that file back in.</li>
+</li>
+<li><p class="first">write some of the text from the first exercise to file &#8211; read that file back in.</p>
+</li>
 </ul>
 <p>reference: <a class="reference external" href="http://inamidst.com/stuff/unidata/">http://inamidst.com/stuff/unidata/</a></p>
 <p>NOTE: if your terminal does not support unicode &#8211; you&#8217;ll get an error trying

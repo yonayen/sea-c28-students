@@ -23,23 +23,21 @@ Introductions
 In which we meet each-other
 
 
-Your instructors
-----------------
+Your instructor
+---------------
 
 .. rst-class:: center large
 
-| Christopher Barker
-| (PythonCHB at gmail dot com)
-|
+| Cris Ewing
+| (cris at crisewing dot com)
 
-.. nextslide::
+Your TAs
+--------
 
 .. rst-class:: center large
 
-
-| Dan Hable
-| (dhable at gmail dot com)
-|
+| Nathan Hubbell
+| Josh Frailey
 
 Who are you?
 -------------
@@ -52,6 +50,57 @@ Who are you?
 * programming background
 * what do you hope to get from this class
 
+
+Course Materials Online
+=======================
+
+Where to Find Your Stuff
+
+GitHub
+------
+
+There are two repositories in GitHub you will want to bookmark:
+
+Student Homework Repository:
+  https://github.com/codefellows/sea-c28-students
+
+  Fork this repository to your own github account and do homework there.
+
+Course Materials Repository:
+  https://github.com/cewing/codefellows_f2_python
+
+  Contains lecture material sources, supplemental materials and homework
+  assignments
+
+  A rendered HTML copy of all these class materials may be found online at
+  http://codefellows.github.io/sea-c28-students
+
+Canvas
+------
+
+We will be using Canvas to track your homework submission.  Grades will be
+entered here as well:
+
+https://canvas.instructure.com/courses/896777
+
+
+Elsewhere
+---------
+
+Class email list:
+  Code Fellows provides an email list for us. We will use this list for
+  announcements. Please make sure that you are receiving the messages sent to
+  this list:
+
+  sea-c28@codefellows.com
+
+Class `Gitter <https://gitter.im/codefellows/sea-c28-students>`_ Chatroom:
+  The student repository README contains a link to the class chatroom. You can
+  use this to communicate with students and instructors:
+
+  https://gitter.im/codefellows/sea-c28-students
+
+
 Introduction to This Class
 ==========================
 
@@ -59,31 +108,6 @@ Introduction to This Class
 
 Python Programming
 
-
-Course Materials Online
------------------------
-
-A rendered HTML copy of the slides for this course may be found online at:
-
-http://codefellows.github.io/sea-f2-python-sept14/
-
-Also there are homework descriptions and supplemental materials.
-
-The source of these materials are in Chris' gitHub repo:
-
-http://github.com/PythonCHB/codefellows_f2_python
-
-Class email list: We will be using this list to communicate for this class:
-
-sea-c25@codefellows.com 
-
-**Canvas**:
-
-We will be using Canvas to track your homework submission, but not much else:
-
-https://canvas.instructure.com/courses/881467
-
-You should have received and email invitation to join the class.
 
 What is Python?
 ---------------
@@ -209,20 +233,27 @@ This class uses Python 2.7 not Python 3.x
 
 * You *can* learn to write Python that is forward compatible from 2.x to 3.x
 * We will be teaching from that perspective.
+* If you find yourself needing to work with Python 2 and 3, there are ways to
+  write compatible code:
 
-* If you find yourself needing to work with Python 2 and 3, there are ways to write compatible code: https://wiki.python.org/moin/PortingPythonToPy3k
-
+  * https://wiki.python.org/moin/PortingPythonToPy3k
+  * http://python3porting.com (particulary the chapters on modern idioms and
+    supporting Python 2 and 3)
+  * http://python-future.org/compatible_idioms.html
 
 Introduction to Your Environment
 ================================
 
-There are three basic elements to your environment when working with Python:
+.. rst-class:: Left
+.. container::
 
-.. rst-class:: build
+    There are three basic elements to your environment when working with Python:
 
-* Your Command Line
-* Your Interpreter
-* Your Editor
+    .. rst-class:: build
+
+    * Your Command Line
+    * Your Interpreter
+    * Your Editor
 
 
 Your Command Line (cli)
@@ -238,6 +269,12 @@ I suggest running through the **cli** tutorial at "learn code the hard way":
 `http://cli.learncodethehardway.org/book`_
 
 .. _http://cli.learncodethehardway.org/book: http://cli.learncodethehardway.org/book
+
+You can also read the materials from the Code Fellows Unix & Git workshop:
+
+`http://cewing.github.io/cf-uge`_
+
+.. _http://cewing.github.io/cf-uge: http://cewing.github.io/cf-uge
 
 
 .. nextslide:: Command Line Enhancements
@@ -352,16 +389,19 @@ This is where an Editor fits in.
 
 Any good text editor will do.
 
-MS Word is **not** a text editor.
+.. rst-class:: build
+.. container::
 
-Nor is *TextEdit* on a Mac.
+    MS Word is **not** a text editor.
 
-``Notepad`` is a text editor -- but a crappy one.
+    Nor is *TextEdit* on a Mac.
 
-You need a real "programmers text editor"
+    ``Notepad`` is a text editor -- but a crappy one.
 
-A text editor saves only what it shows you, with no special formatting
-characters hidden behind the scenes.
+    You need a real "programmers text editor"
+
+    A text editor saves only what it shows you, with no special formatting
+    characters hidden behind the scenes.
 
 .. nextslide:: Minimum Requirements
 
@@ -382,11 +422,14 @@ In addition, great features to add include:
 * Jump-to-definition
 * Interactive follow-along for debugging
 
-Have an editor that does all this? Feel free to use it.
+.. rst-class:: build
+.. container::
 
-If not, I suggest ``Sublime Text``:
+    Have an editor that does all this? Feel free to use it.
 
-http://www.sublimetext.com/
+    If not, I suggest ``Sublime Text`` (2 or 3):
+
+    http://www.sublimetext.com/
 
 
 Why No IDE?
@@ -394,15 +437,19 @@ Why No IDE?
 
 I am often asked this question.
 
-An IDE does not give you much that you can't get with a good editor plus a good
-interpreter.
+.. rst-class:: build
+.. container::
 
-An IDE often weighs a great deal
+    An IDE does not give you much that you can't get with a good editor plus a
+    good interpreter.
 
-Setting up IDEs to work with different projects can be challenging and
-time-consuming.
+    An IDE often weighs a great deal
 
-Particularly when you are first learning, you don't want too much done for you.
+    Setting up IDEs to work with different projects can be challenging and
+    time-consuming.
+
+    Particularly when you are first learning, you don't want too much done for
+    you.
 
 .. nextslide::
 
@@ -447,11 +494,9 @@ You have this already, RIGHT?
 
 If not:
 
- * `For the mac  <./supplements/python_for_mac.html>`_
-
- * `For linux  <./supplements/python_for_linux.html>`_
-
- * `For windows  <./supplements/python_for_windows.html>`_
+* `For the mac  <./supplements/python_for_mac.html>`_
+* `For linux  <./supplements/python_for_linux.html>`_
+* `For windows  <./supplements/python_for_windows.html>`_
 
 Step 2: Pip
 -----------
@@ -484,7 +529,8 @@ Once you've installed pip, you use it to install Python packages by name:
     $ pip install foobar
     ...
 
-To find packages (and their proper names), you can search the python package index (PyPI):
+To find packages (and their proper names), you can search the python package
+index (PyPI):
 
 https://pypi.python.org/pypi
 
@@ -501,7 +547,8 @@ Often you need one version for one project, and a different one for another.
 
 You can then install potentially conflicting software safely.
 
-For this class, this is no big deal, but as you start to work on "real" projects, it can be a key tool.
+For this class, this is no big deal, but as you start to work on "real"
+projects, it can be a key tool.
 
 .. _Virtualenv: http://www.virtualenv.org/
 
@@ -513,7 +560,8 @@ If you want to install it, here are some notes:
 Step 4: Clone Class Repository
 ------------------------------
 
-`gitHub <www.github.com>`_ is an industry-standard system for collaboration on software projects -- particularly open source ones.
+`gitHub <www.github.com>`_ is an industry-standard system for collaboration on
+software projects -- particularly open source ones.
 
 We will use it this class to manage submitting and reviewing your work, etc.
 
@@ -523,12 +571,11 @@ Next, you'll make a copy of the class repository using ``git``.
 
 The canonical copy is in the CodeFellows organization on GitHub:
 
-https://github.com/codefellows/sea-f2-python-sept14
+https://github.com/codefellows/sea-c28-students
 
 Open that URL, and click on the *Fork* button at the top right corner.
 
 This will make a copy of this repository in *your* github account.
-
 
 .. nextslide:: Clone Your Fork
 
@@ -637,7 +684,7 @@ This is the stuff I use every day:
 
 * any shell command:
 
- - ``! the_shell_command``
+  - ``! the_shell_command``
 
 * pasting from the clipboard:
 
@@ -888,6 +935,8 @@ Values
 Literals for the Basic Value types:
 ------------------------------------
 
+.. rst-class:: build
+
 Numbers:
   - floating point: ``3.4``
   - integers: ``456``
@@ -902,6 +951,7 @@ Boolean values:
   -  ``False``
 
 (There are intricacies to all of these that we'll get into later)
+
 
 Values in Action
 ----------------
@@ -1714,7 +1764,9 @@ exercises in Python programming
 Homework
 ========
 
-Four Tasks by Next Monday
+.. rst-class:: center large
+
+    Three Tasks by Wednesday
 
 
 Task 1
@@ -1722,13 +1774,14 @@ Task 1
 
 **Tell Us About Yourself**
 
-This is a way for you to learn a bit about gitHub, and how you are going to submit most of your homework.
+This is a way for you to learn a bit about gitHub, and how you are going to
+submit most of your homework.
 
 * Create a new folder in the ``students`` folder in the class repository.
 
   * Create the folder in your clone of your fork of the repository.
   * Name it with your own name in CamelCase, like: ``ChrisBarker``.
-  * In the folder create one new file, named ``README.md``
+  * In the folder create one new file, named ``README.md`` (or ``README.rst``)
   * In that new file, write up a few paragraphs about yourself.
 
     * Use proper `markdown`_ syntax. (or `reStructuredText`_)
@@ -1750,6 +1803,8 @@ This is a way for you to learn a bit about gitHub, and how you are going to subm
 * In GitHub's Web UI, make a ``pull request`` to the original CodeFellows
   repository.
 
+Remember, GitHub is a public place.  Your work in this repository is visible to
+the world.
 
 Task 2
 ------
@@ -1761,58 +1816,37 @@ Make sure you have the basics of command line usage down:
 Work through the supplemental tutorials on setting up your
 `Command Line`_ for good development support.
 
-Make sure you've got your editor set up productively -- at the very very least, make sure it does Python indentation well.
+In particular, ensure that you have command-line support for git.
+
+Then, make sure you've got your editor set up productively -- at the very very
+least, make sure it does Python indentation well.
+
+.. _Command Line: supplements/shell.html
+
+.. nextslide::
 
 **Advanced Editor Setup:**
 
-If you are using SublimeText, here are some notes to make it super-nifty:
-
-Setting up `SublimeText`_ .
+If you are using SublimeText, `here are some notes`_ to make it super-nifty.
 
 At the end, your editor should support tab completion and pep8 and pyflakes
-linting. Your command line should be able to show you what virtualenv is active
-and give you information about your git repository when you are inside one.
+linting.
 
 If you are not using SublimeText, look for plugins that accomplish the same
-goals for your own editor.  If none are available, please consider a change of
-editor.
+goals for your own editor.
 
-.. _SublimeText: supplements/sublime_as_ide.html
-.. _Command Line: supplements/shell.html
+If none are available, please consider a change of editor.
+
+.. _here are some notes: supplements/sublime_as_ide.html
+
 
 Task 3
-------
-
-**Python Pushups**
-
-To get a bit of exercise solving some puzzles with Python, work on the Python
-exercises at `CodingBat`_.
-
-Begin by making an account on the site. Once you have done so, go to the
-'prefs' link at the top right and enter your name so we know who you are.
-
-In addition, add the following email address to the 'Share To' box.  This will
-allow your instructors to see the work you have done.
-
-::
-
-    pyinstructor@codefellows.com
-
-There are 8 sets of puzzles. Do as many as you can, starting with the Warmups.
-
-.. _CodingBat: http://codingbat.com
-
-**Please Note:** Do Not send emails to the above email address, they will not
-be answered.
-
-
-Task 4
 ------
 
 **Explore Errors**
 
 * Create a new directory in your personal folder in the ``students`` folder of the class repository::
-  
+
   $ mkdir session01
   $ cd session01
 
@@ -1832,10 +1866,11 @@ Task 4
 
     * for review: ``NameError``, ``TypeError``, ``SyntaxError``, ``AttributeError``
 
-(hint -- the interpreter will quit when it hits a Exception -- so you can comment out all but the one you are testing at the moment)
-
   * Use the Python standard library reference on `Built In Exceptions`_ as a
     reference
+
+(hint -- the interpreter will quit when it hits a Exception -- so you can
+comment out all but the one you are testing at the moment)
 
 .. nextslide::
 

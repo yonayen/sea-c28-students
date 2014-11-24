@@ -70,8 +70,7 @@
 <h2>Review/Questions<a class="headerlink" href="#review-questions" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="review-of-previous-classes">
 <h3>Review of Previous Classes<a class="headerlink" href="#review-of-previous-classes" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>Sequences<ul>
 <li>Slicing</li>
 <li>Lists</li>
@@ -89,7 +88,6 @@
 </ul>
 </li>
 </ul>
-</div></blockquote>
 <p>Any questions?</p>
 <p>A couple other nifty utilties with for loops:</p>
 <p><strong>tuple unpacking:</strong></p>
@@ -160,22 +158,16 @@
 <h2>A little warm up<a class="headerlink" href="#a-little-warm-up" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="fun-with-strings">
 <h3>Fun with strings<a class="headerlink" href="#fun-with-strings" title="Permalink to this headline">¶</a></h3>
-<ul>
-<li><p class="first">Rewrite: <tt class="docutils literal"><span class="pre">the</span> <span class="pre">first</span> <span class="pre">3</span> <span class="pre">numbers</span> <span class="pre">are:</span> <span class="pre">%i,</span> <span class="pre">%i,</span> <span class="pre">%i&quot;%(1,2,3)</span></tt></p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
+<li>Rewrite: <tt class="docutils literal"><span class="pre">the</span> <span class="pre">first</span> <span class="pre">3</span> <span class="pre">numbers</span> <span class="pre">are:</span> <span class="pre">%i,</span> <span class="pre">%i,</span> <span class="pre">%i&quot;%(1,2,3)</span></tt><ul>
 <li>for an arbitrary number of numbers...</li>
 </ul>
-</div></blockquote>
 </li>
-<li><p class="first">Write a format string that will take:</p>
-<blockquote>
-<div><ul class="simple">
+<li>Write a format string that will take:<ul>
 <li><tt class="docutils literal"><span class="pre">(</span> <span class="pre">2,</span> <span class="pre">123.4567,</span> <span class="pre">10000)</span></tt></li>
 <li>and produce:</li>
 <li>`` &#8220;file_002 :   123.46, 1e+04&#8221; ``</li>
 </ul>
-</div></blockquote>
 </li>
 </ul>
 </div>
@@ -186,8 +178,7 @@
 <h3>Dictionary<a class="headerlink" href="#dictionary" title="Permalink to this headline">¶</a></h3>
 <p>Python calls it a <tt class="docutils literal"><span class="pre">dict</span></tt></p>
 <p>Other languages call it:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>dictionary</li>
 <li>associative array</li>
 <li>map</li>
@@ -195,7 +186,6 @@
 <li>hash</li>
 <li>key-value pair</li>
 </ul>
-</div></blockquote>
 </div>
 <div class="section" id="dictionary-constructors">
 <h3>Dictionary Constructors<a class="headerlink" href="#dictionary-constructors" title="Permalink to this headline">¶</a></h3>
@@ -238,13 +228,11 @@
 </pre></div>
 </div>
 <p>Keys can be any immutable:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>number</li>
 <li>string</li>
 <li>tuple</li>
 </ul>
-</div></blockquote>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [325]: </span><span class="n">d</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;string&#39;</span>
 <span class="gp">In [326]: </span><span class="n">d</span><span class="p">[</span><span class="mf">3.14</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;pi&#39;</span>
 <span class="gp">In [327]: </span><span class="n">d</span><span class="p">[</span><span class="s">&#39;pi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.14</span>
@@ -265,17 +253,13 @@
 <p>Same average time regardless of size</p>
 <p>Note: Python name look-ups are implemented with dict &#8211; it&#8217;s highly optimized</p>
 <p>Key to value:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>lookup is one way</li>
 </ul>
-</div></blockquote>
 <p>Value to key:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>requires visiting the whole dict</li>
 </ul>
-</div></blockquote>
 <p>If you need to check dict values often, create another dict or set</p>
 <p>(up to you to keep them in sync)</p>
 </div>
@@ -334,18 +318,14 @@
 </div>
 <div class="section" id="dictionary-performance">
 <h3>Dictionary Performance<a class="headerlink" href="#dictionary-performance" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>indexing is fast and constant time: O(1)</li>
 <li><tt class="docutils literal"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">s</span></tt> constant time: O(1)</li>
 <li>visiting all is proportional to n: O(n)</li>
 <li>inserting is constant time: O(1)</li>
 <li>deleting is constant time: O(1)</li>
 </ul>
-</div></blockquote>
 <p><a class="reference external" href="http://wiki.python.org/moin/TimeComplexity">http://wiki.python.org/moin/TimeComplexity</a></p>
-</div></blockquote>
 </div>
 <div class="section" id="other-dict-operations">
 <h3>Other dict operations:<a class="headerlink" href="#other-dict-operations" title="Permalink to this headline">¶</a></h3>
@@ -706,25 +686,20 @@
 <p><a class="reference external" href="http://www.manpagez.com/man/3/fopen/">http://www.manpagez.com/man/3/fopen/</a></p>
 <p><strong>Gotcha</strong> &#8211; &#8216;w&#8217; modes always clear the file</p>
 <p>Text is default</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>Newlines are translated: <tt class="docutils literal"><span class="pre">\r\n</span> <span class="pre">-&gt;</span> <span class="pre">\n</span></tt></li>
 <li>&#8211; reading and writing!</li>
 <li>Use *nix-style in your code: <tt class="docutils literal"><span class="pre">\n</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">io.open()</span></tt> returns various &#8220;stream&#8221; objects &#8211; but they act like file objects.</li>
 <li>In text mode, io.open() defaults to &#8220;Universal&#8221; newline mode.</li>
 </ul>
-</div></blockquote>
 <p>Gotcha:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>no difference between text and binary on *nix</li>
 <li>breaks on Windows</li>
 </ul>
-</div></blockquote>
 <p><tt class="docutils literal"><span class="pre">io.open(file,</span> <span class="pre">mode='r',</span> <span class="pre">buffering=-1,</span> <span class="pre">encoding=None,</span> <span class="pre">errors=None,</span> <span class="pre">newline=None,</span> <span class="pre">closefd=True)</span></tt></p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><tt class="docutils literal"><span class="pre">file</span></tt> is generally a file name or full path</li>
 <li><tt class="docutils literal"><span class="pre">mode</span></tt> is the mode for opening: &#8216;r&#8217;, &#8216;w&#8217;, etc.</li>
 <li><tt class="docutils literal"><span class="pre">buffering</span></tt> controls the buffering mode (0 for no buffering)</li>
@@ -733,7 +708,6 @@
 <li><tt class="docutils literal"><span class="pre">newline</span></tt> controls Universal Newline mode: lets you write DOS-type files on *nix, for instance (text mode only).</li>
 <li><tt class="docutils literal"><span class="pre">closedfd</span></tt> controls close()  behavior if a file descriptor, rather than a name is passed in (advanced usage!)</li>
 </ul>
-</div></blockquote>
 <p>(<a class="reference external" href="https://docs.python.org/2/library/io.html?highlight=io.open#io.open">https://docs.python.org/2/library/io.html?highlight=io.open#io.open</a>)</p>
 </div>
 <div class="section" id="file-reading">
@@ -787,15 +761,13 @@
 <div class="section" id="file-like-objects">
 <h3>File Like Objects<a class="headerlink" href="#file-like-objects" title="Permalink to this headline">¶</a></h3>
 <p>Many classes implement the file interface:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>loggers</li>
 <li><tt class="docutils literal"><span class="pre">sys.stdout</span></tt></li>
 <li><tt class="docutils literal"><span class="pre">urllib.open()</span></tt></li>
 <li>pipes, subprocesses</li>
 <li>StringIO</li>
 </ul>
-</div></blockquote>
 <p><a class="reference external" href="https://docs.python.org/2/library/stdtypes.html#file-objects">https://docs.python.org/2/library/stdtypes.html#file-objects</a></p>
 </div>
 <div class="section" id="stringio">
@@ -879,23 +851,19 @@ os.path.relpath()￼
 <h2>Homework<a class="headerlink" href="#homework" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="recommended-reading">
 <h3>Recommended Reading:<a class="headerlink" href="#recommended-reading" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>Dive Into Python: Chapt. 13,14</li>
 <li>Unicode: <a class="reference external" href="http://www.joelonsoftware.com/articles/Unicode.html">http://www.joelonsoftware.com/articles/Unicode.html</a></li>
 </ul>
-</div></blockquote>
 </div>
 <div class="section" id="assignments">
 <h3>Assignments:<a class="headerlink" href="#assignments" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>dict/sets lab</li>
 <li>coding kata: trigrams</li>
 <li>Exceptions</li>
 <li>Update mailroom with dicts.</li>
 </ul>
-</div></blockquote>
 </div>
 <div class="section" id="id5">
 <h3>Dictionaries and Sets<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
@@ -947,24 +915,20 @@ os.path.relpath()￼
 </div>
 <div class="section" id="text-and-files-and-dicts-and">
 <h3>Text and files and dicts, and...<a class="headerlink" href="#text-and-files-and-dicts-and" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul>
+<ul>
 <li><p class="first">Coding Kata 14 - Dave Thomas</p>
 <p><a class="reference external" href="http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/">http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/</a></p>
 <p>and in this doc:</p>
 <p><a class="reference external" href="http://codefellows.github.io/sea-c15-python/supplements/kata_fourteen.html">http://codefellows.github.io/sea-c15-python/supplements/kata_fourteen.html</a></p>
 </li>
 <li><p class="first">Use The Adventures of Sherlock Holmes as input:</p>
-<blockquote>
-<div><p><a class="reference external" href="http://codefellows.github.io/sea-c15-python/_downloads/sherlock.txt">http://codefellows.github.io/sea-c15-python/_downloads/sherlock.txt</a></p>
-</div></blockquote>
+<p><a class="reference external" href="http://codefellows.github.io/sea-c15-python/_downloads/sherlock.txt">http://codefellows.github.io/sea-c15-python/_downloads/sherlock.txt</a></p>
 </li>
 <li><p class="first">This is intentionally open-ended and underspecified. There are many interesting decisions to make.</p>
 </li>
 <li><p class="first">Experiment with different lengths for the lookup key. (3 words, 4 words, 3 letters, etc)</p>
 </li>
 </ul>
-</div></blockquote>
 </div>
 <div class="section" id="id6">
 <h3>Exceptions<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
@@ -977,8 +941,7 @@ os.path.relpath()￼
 </div>
 <div class="section" id="paths-and-file-processing">
 <h3>Paths and File Processing<a class="headerlink" href="#paths-and-file-processing" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>write a program which prints the full path to all files in the current directory, one per line</li>
 <li>write a program which copies a file from a source, to a destination (without using shutil, or the OS copy command)</li>
 <li>update mailroom from last weeks homework to:<ul>
@@ -989,7 +952,6 @@ os.path.relpath()￼
 </ul>
 </li>
 </ul>
-</div></blockquote>
 </div>
 </div>
 </div>

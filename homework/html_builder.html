@@ -78,32 +78,43 @@
 </div>
 <div class="section" id="general-instructions">
 <h3>General Instructions:<a class="headerlink" href="#general-instructions" title="Permalink to this headline">¶</a></h3>
-<p>For each step, add the required functionality. There is example code to run your code for each step in: <tt class="docutils literal"><span class="pre">code\session06\run_html_render.py</span></tt></p>
-<p>name your file: <tt class="docutils literal"><span class="pre">html_render.py</span></tt> &#8211; so it can be imported by <tt class="docutils literal"><span class="pre">run_html_render.py</span></tt></p>
-<p>You should be able to run that code at each step, uncommenting each new step in <tt class="docutils literal"><span class="pre">run_html_render.py</span></tt> as you go.</p>
-<p>It builds up a html tree, and then calls the <tt class="docutils literal"><span class="pre">render()</span></tt> method of your element to render the page.</p>
-<p>It uses a <tt class="docutils literal"><span class="pre">cStringIO</span></tt> object (like a file, but in memory) to render to memory, then dumps it to the console, and writes a file. Take a look at the code at the end to make sure you understand it.</p>
+<p>For each step, add the required functionality. There is example code to run
+your code for each step in: <tt class="docutils literal"><span class="pre">code\session06\run_html_render.py</span></tt></p>
+<p>name your file: <tt class="docutils literal"><span class="pre">html_render.py</span></tt> &#8211; so it can be imported by
+<tt class="docutils literal"><span class="pre">run_html_render.py</span></tt></p>
+<p>You should be able to run that code at each step, uncommenting each new step in
+<tt class="docutils literal"><span class="pre">run_html_render.py</span></tt> as you go.</p>
+<p>It builds up a html tree, and then calls the <tt class="docutils literal"><span class="pre">render()</span></tt> method of your
+element to render the page.</p>
+<p>It uses a <tt class="docutils literal"><span class="pre">cStringIO</span></tt> object (like a file, but in memory) to render to
+memory, then dumps it to the console, and writes a file. Take a look at the
+code at the end to make sure you understand it.</p>
 <p>The html generated at each step is in the files: <tt class="docutils literal"><span class="pre">test_html_ouput?.html</span></tt></p>
-<p>At each step, your results should look similar that those (maybe not identical...)</p>
+<p>At each step, your results should look similar that those (maybe not
+identical...)</p>
 </div>
 <div class="section" id="step-1">
 <h3>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
 <p>Create an <tt class="docutils literal"><span class="pre">Element</span></tt> class for rendering an html element (xml element).</p>
-<p>It should have class attributes for the tag name (&#8220;html&#8221; first) and the indentation (spaces to indent for pretty printing)</p>
+<p>It should have class attributes for the tag name (&#8220;html&#8221; first) and the
+indentation (spaces to indent for pretty printing)</p>
 <p>The constructor signature should look like</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">Element</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>where <tt class="docutils literal"><span class="pre">content</span></tt> is a string</p>
 <p>It should have an <tt class="docutils literal"><span class="pre">append</span></tt> method that can add another string to the content.</p>
-<p>It should have a <tt class="docutils literal"><span class="pre">render(file_out,</span> <span class="pre">ind</span> <span class="pre">=</span> <span class="pre">&quot;&quot;)</span></tt> method that renders the tag and the strings in the content.</p>
+<p>It should have a <tt class="docutils literal"><span class="pre">render(file_out,</span> <span class="pre">ind</span> <span class="pre">=</span> <span class="pre">&quot;&quot;)</span></tt> method that renders the tag and
+the strings in the content.</p>
 <p><tt class="docutils literal"><span class="pre">file_out</span></tt> could be any file-like object ( i.e. have a <tt class="docutils literal"><span class="pre">write()</span></tt> method ).</p>
-<p><tt class="docutils literal"><span class="pre">ind</span></tt> is a string with the indentation level in it: the amount that the tag should be indented for pretty printing.</p>
-<blockquote>
-<div><ul class="simple">
-<li>This is a little tricky: <tt class="docutils literal"><span class="pre">ind</span></tt> will be the amount that this element should be indented already. It will be from zero (an empty string) to a lot of spaces, depending on how deep it is in the tree.</li>
-</ul>
-</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">ind</span></tt> is a string with the indentation level in it: the amount that the tag
+should be indented for pretty printing.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a little tricky: <tt class="docutils literal"><span class="pre">ind</span></tt> will be the amount that this element
+should be indented already. It will be from zero (an empty string) to a lot of
+spaces, depending on how deep it is in the tree.</p>
+</div>
 <p>The amount of indentation should be set by the class attribute: <tt class="docutils literal"><span class="pre">indent</span></tt></p>
 <p>You should now be able to render an html tag with text in it as contents.</p>
 <p>See: step 1. in <tt class="docutils literal"><span class="pre">run_html_render.py</span></tt></p>

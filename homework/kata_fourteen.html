@@ -80,20 +80,21 @@ Swift adventure on demand?</p>
 <p>OK, perhaps not. But that won’t stop us trying. I coded up a quick
 program to generate some swash-buckling scientific adventure on demand. It
 came up with:</p>
-<blockquote>
-<div><p>... it was in the wind that was what he thought was his companion. I
+<div class="highlight-python"><div class="highlight"><pre>... it was in the wind that was what he thought was his companion. I
 think would be a good one and accordingly the ship their situation
 improved. Slowly so slowly that it beat the band! You’d think no one
-was a low voice. &#8220;Don’t take any of the elements and the
+was a low voice. &quot;Don’t take any of the elements and the
 inventors of the little Frenchman in the enclosed car or cabin completely
 fitted up in front of the gas in the house and wringing her hands.
-&#8220;I’m sure they’ll fall!&#8221;</p>
-<p>She looked up at them. He dug a mass of black vapor which it had
+&quot;I’m sure they’ll fall!&quot;
+
+She looked up at them. He dug a mass of black vapor which it had
 refused to accept any. As for Mr. Swift as if it goes too high I’ll
 warn you and you can and swallow frequently. That will make the airship was
 shooting upward again and just before the raid wouldn’t have been
-instrumental in capturing the scoundrels right out of jail.&#8221;&lt;/em&gt;</p>
-</div></blockquote>
+instrumental in capturing the scoundrels right out of jail.&quot;&lt;/em&gt;
+</pre></div>
+</div>
 <p>Stylistically, it’s Victor Appleton meets Dylan Thomas. Technically,
 it’s all done with trigrams.</p>
 <p>Trigram analysis is very simple. Look at each set of three adjacent words
@@ -124,9 +125,8 @@ we could start with &#8220;I may&#8221;. The only possible next word is
 <div class="highlight-python"><div class="highlight"><pre>I may I
 </pre></div>
 </div>
-<p>The last two words are &#8220;may I&#8221;, so the next word is
-&#8220;wish&#8221;. We then look up &#8220;I wish&#8221;, and find our choice
-is constrained to another &#8220;I&#8221;.:</p>
+<p>The last two words are &#8220;may I&#8221;, so the next word is &#8220;wish&#8221;. We then look up &#8220;I
+wish&#8221;, and find our choice is constrained to another &#8220;I&#8221;.:</p>
 <div class="highlight-python"><div class="highlight"><pre>I may I wish I
 </pre></div>
 </div>
@@ -135,9 +135,8 @@ choose &#8220;may&#8221;:</p>
 <div class="highlight-python"><div class="highlight"><pre>I may I wish I may
 </pre></div>
 </div>
-<p>Now we’re back where we started from, with &#8220;I may.&#8221;
-Following the same sequence, but choosing &#8220;might&#8221; this time, we
-get:</p>
+<p>Now we’re back where we started from, with &#8220;I may.&#8221; Following the same
+sequence, but choosing &#8220;might&#8221; this time, we get:</p>
 <div class="highlight-python"><div class="highlight"><pre>I may I wish I may I wish I might
 </pre></div>
 </div>
