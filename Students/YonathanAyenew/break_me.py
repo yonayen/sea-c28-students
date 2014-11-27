@@ -22,13 +22,13 @@ type(u'Brother')
 
 # error is that'unicode' isn't callable
 
-# # 
-# # NameError
-# # 
+# 
+# NameError
+# 
 
-# john = man()
+john = man()
 
-# # error is that name ''man' is not defined
+# error is that name ''man' is not defined
 
 # # 
 # # AttributeError
