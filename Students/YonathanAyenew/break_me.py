@@ -30,13 +30,13 @@ john = man()
 
 # error is that name ''man' is not defined
 
-# # 
-# # AttributeError
-# # 
+# 
+# AttributeError
+# 
 
-# john = object()
+john = object()
 
-# john.length
+john.length
 
-# # error is 'object' object has no attribute 'length'
+# error is 'object' object has no attribute 'length'
 
