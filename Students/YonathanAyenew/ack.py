@@ -8,3 +8,6 @@ def ack (m, n):
 		return ack(m - 1, 1)
 	else:
 		return ack(m - 1, ack(m, n - 1))
+
+
+if __name__ == '__main__':
