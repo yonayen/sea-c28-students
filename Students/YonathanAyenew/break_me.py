@@ -1,42 +1,44 @@
 
+from __future__ import print_function
+
 # 
 # SyntaxError Exception
 # 
 
-from __future__ import print_function
 
-def a_function (return=u'This should be a SyntaxError'):
+def a_function (return=u"This should be a SyntaxError"):
     print(return)
-
-# or 
-
-continue = u"this should raise a SyntaxError"
 
 # 
 # TypeError
 # 
 
-type(u'Uncle')
-type=u'Sister'
-type(u'Brother')
+def people (alex, kate):
+    alex (man)
+    kate (woman)
 
-# error is that'unicode' isn't callable
+print (alex + 5)
+
 
 # 
 # NameError
 # 
 
-john = man()
+def club (a, b):
+	print (a,b)
 
-# error is that name ''man' is not defined
+if party == club:
+    print (u"very simiilar")
+
 
 # 
 # AttributeError
 # 
 
-john = object()
+def ind():
+    print (u"I am exceptional")
 
-john.length
+ind.length
 
 # error is 'object' object has no attribute 'length'
 
