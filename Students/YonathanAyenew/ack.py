@@ -38,3 +38,7 @@ if __name__ == '__main__':
 	print ack (3, 4)
 
 	# "All tests pass"
+
+	print ack (4, 1)
+	# When m > 3, RuntimeError: maximum recursion depth exceeded 
+	#
