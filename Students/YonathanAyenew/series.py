@@ -17,3 +17,12 @@ def lucas(n):
     for i in range (n-1):
         a, b = b, a + b
     return a
+
+# Sum_Series function
+
+def sum_series(n):
+    """ Start with any two integers to begin looping technique """
+    a, b = 0, 1
+    for i in range (n-1):
+        a, b = b, a + b
+    return a	
