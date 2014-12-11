@@ -3,7 +3,7 @@
 # trigrams.py
 
 from io import open
-import string
+import StringIO
 
 infilename = u'sherlock.txt'
 
