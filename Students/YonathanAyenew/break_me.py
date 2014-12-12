@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+
+#break_me.py (SyntaxError, TypeError, NameError and AttributeError) 
+
 
 from __future__ import print_function
 
@@ -25,7 +29,7 @@ print (alex + 5)
 # 
 
 def club (a, b):
-	print (a,b)
+    print (a,b)
 
 if party == club:
     print (u"very simiilar")
