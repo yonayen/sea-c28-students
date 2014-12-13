@@ -10,11 +10,11 @@ from __future__ import print_function
 # 
 
 
-def a_function (a, b):
+def a_function():
     if a == 42 and b == a
         return (u"it's all the same")
 
-# error because I didn't put an ':'  after the if statement.
+# SyntaxError: invalid syntax, because I didn't put an ':'  after the if statement.
 
 # 
 # TypeError
@@ -42,10 +42,18 @@ def parts():
 # AttributeError
 # 
 
-def ind():
-    print (u"I am exceptional")
+def change_case():
+    word = 'THIS IS UPPER CASE'
+    word = word.lowerr()
+    return (word)
 
-ind.length
+# AttributeError: 'str' object has no attribute 'lowerr'
 
-# error is 'object' object has no attribute 'length'
+# 
+#  call following fucntions to test errors
+# 
 
+# AttributeError: change_case()
+# NameError: parts()
+# TypeError: phrase()
+# SyntaxError: a_function()
