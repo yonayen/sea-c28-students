@@ -20,8 +20,12 @@ def a_function (a, b):
 # TypeError
 # 
 
-def people ('9', 5):
-    print ('9'+ 5)
+def phrase():
+    phrase = u'Life is good'
+    phrase[13] = 'r'
+    print (phrase)
+
+# immutable 'str' object doesn't accpet new assignment on line 25
 
 
 # 
