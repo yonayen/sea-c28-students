@@ -10,30 +10,28 @@ from __future__ import print_function
 # 
 
 
-def a_function (return=u"This should be a SyntaxError"):
-    print(return)
+def a_function (a, b):
+    if a == 42 and b == a
+        print (u"it's all the same", ...)
+
+# error because I didn't put an ':'  after the if statement.
 
 # 
 # TypeError
 # 
 
-def people (alex, kate):
-    alex (man)
-    kate (woman)
-
-print (alex + 5)
+def people ('9', 5):
+    print ('9'+ 5)
 
 
 # 
 # NameError
 # 
 
-def club (a, b):
-    print (a,b)
+def club:
+    return clubb  
 
-if party == club:
-    print (u"very simiilar")
-
+    # misspelling returns NameError
 
 # 
 # AttributeError
