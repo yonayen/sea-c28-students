@@ -12,7 +12,7 @@ from __future__ import print_function
 
 def a_function (a, b):
     if a == 42 and b == a
-        print (u"it's all the same", ...)
+        return (u"it's all the same")
 
 # error because I didn't put an ':'  after the if statement.
 
@@ -23,7 +23,7 @@ def a_function (a, b):
 def phrase():
     phrase = u'Life is good'
     phrase[13] = 'r'
-    print (phrase)
+    return (phrase)
 
 # immutable 'str' object doesn't accpet new assignment on line 25
 
@@ -32,10 +32,11 @@ def phrase():
 # NameError
 # 
 
-def club:
-    return clubb  
-
-    # misspelling returns NameError
+def parts():
+    foobar = 'Jim'
+    return ('My name is ' + foo)
+    
+    # NameError: global name 'foo' is not defined
 
 # 
 # AttributeError
