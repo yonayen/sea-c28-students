@@ -1,96 +1,107 @@
 
-	#!/usr/bin/python
+#!/usr/bin/python
 
-	# List_lab.py
-	from __future__ import print_function
+# List_lab.py
 
-    # Part 1, creating the list
+from __future__ import print_function
 
-    fruit_list = [u"Apples", u"Pears", u"Oranges", u"Peaches"]
-    print fruit_list
+# 
+# Part 1, creating the list
+# 
 
-    new_fruit = raw_input(u'what other fruit would you like to add to list?-->')
-    fruit_list.append(new_fruit)
-    print fruit_list
+fruit_list = ["Apples", "Pears", "Oranges", "Peaches"]
+print fruit_list
+
+new_fruit = raw_input('what other fruit would you like to add to list?-->')
+fruit_list.append(new_fruit)
+print fruit_list
     
-    # using '1 is first' to dispay number corresponding to fruit
-    user_number = raw_input(u'choose number between 1 and 5-->')
-    print fruit_list[int(user_number)-1]
-
-    fruit_list = [u'Bananas', u'Grapes'] + fruit_list
-    print fruit_list
-
-    fruit_list = fruit_list.insert(0, u'Kiwis')
-    print fruit_list
-
-    for fruits in fruit_list:
-        if fruits[0] == 'P':
-            print fruits
-
-    # Part 2, 
-
-    print fruit_list
-    del fruit_list[-1]
+# using '1 is first' to dispay number corresponding to fruit
+ind = int(raw_input('choose number from index-->')
     
-    print fruit_list
-    user_delete = raw_input(u'Choose fruit to remove from list-->')
+print "You chose fruit number: %i, which is %s" % (ind, fruit_list[ind-1])
+
+print fruit_list
+
+fruit_list = ['Bananas', 'Grapes'] + fruit_list
+print fruit_list
+
+fruit_list.insert(0, 'Kiwis')
+print fruit_list
+
+for fruits in fruit_list:
+    if fruits[0] == 'P':
+        print fruits
+
+# 
+# Part 2 -- use a duplicate list for changes (removals) 
+# 
+
+doublefruit_list = fruit_list * 2
     
-    # delete selected fruit
-    fruit_list.pop(fruit_list.index(user_delete))
-    print fruit_list
+print "The fruits are: ", fruit_list
+user_delete = raw_input(u'Choose fruit to remove from list-->')
 
-    # Part 3
+# delete selected fruit
+while user_delete in doublefruit_list:
+    doublefruit_list.remove(user_delete)
 
-    [each_fruit.lower() for each_fruit in fruit_list]
-    print fruit_list
-    # Make fruit_list lower case
+print doublefruit_list
 
-    for fruits in fruit_list:
-        bad_fruit = raw_input(u'Would you like to remove the fruit?-->')
-        
-        # if fruit is chosen it's removed from the fruit_list
-        if bad_fruit in fruit_list:
-            fruit_list.remove(bad_fruit)
-            print bad_fruit, "has been deleted"
-        else:
-            print bad_fruit, "can't be delted because it's not in the fruit_list"
-        print "The fruit_list has", len(fruit_list), "fruits:", fruit_list
+# 
+# Part 3
+# 
 
-    # Part 4 
+originalfruit_list = fruit_list[:]
+# this copy will be used for part 4
+
+for fruits in fruit_list:
+    bad_fruit = raw_input('Would you like to remove the fruit: %s?' % fruits)
+    if bad_fruit[0].lower() == "no":
+        while fruits in fruit_list:
+            fruit_list.remove(fruits)
+    elif bad_fruit[0].lower() == "yes":
+        pass
+    else:
+        print fruit_list
+
+fruit_list = originalfruit_list[:]
+
+# 
+# Part 4 
+# 
+
+newfruit_list = []
+for fruits in fruit_list:
+    r_fruits.append(fruit[::-1])
+
+print newfruit_list and fruit_list
+
+
     
-    newfruit_list = fruit_list[:]
-    # make copy of original fruit_list
-    newfruit_list.reverse()
-    del newfruit_list[-1]
-    # reverse and delete last fruit in copied list
 
-    print newfruit_list and fruit_list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 	
