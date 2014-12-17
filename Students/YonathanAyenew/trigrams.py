@@ -1,39 +1,54 @@
 #!/usr/bin/env python
+# -*-coding: UTF-8 -*-
 
 # trigrams.py
 
 from io import open
-import StringIO
+import string
+# import sys
+# import random
 
-infilename = u'sherlock.txt'
+data_source = u'sherlock.txt'
+
+# 
+# First open the file
+# 
+
+def read_in_data(data_source):
+
+    in_data = open(data_source, 'r')
+    # get rid of first 61 lines of Table of Contents and header.
+    for i in range(61):
+        in_data.readline()
+
+    rest_of_text = []
+    # read the rest of the file line by line
+    for line in in_data:
+        if line.startswith(u"End of the Project Gutenberg EBook"):
+            break
+        rest_of_text.append(line)
+
+    # combine lines together into one big string:
+    return " ".join(rest_of_text)
+
 
 def make_string(text):
 
     """ create string with no punctuation and special characters. """
 
+    
+
+    punctuation = string.punctuation.replace("'", "")
+    # keep words with apostrophies
+
+    punctuation = string.punctuation.replace("-", "")
+    # keep words with hyphens
+
     text = text.lower()
     # universal lower-case
+    
     words = text.split()
     # create words by splitting
-
-
-#!/usr/bin/env python
-
-"""
-Trigram.py
-A solution to the trigram coding Kata:
-http://codekata.com/kata/kata14-tom-swift-under-the-milkwood/
-Chris Barker's Solution
-This one is pretty straight forward -- really a quickie script
-"""
-
-# infilename = u"sherlock_small.txt"
-infilename = u"sherlock.txt"
-
-from io import open
-import sys
-import string
-import random
 
 
 def make_words(text):
@@ -65,22 +80,7 @@ def make_words(text):
     return words
 
 
-def read_in_data(infilename):
 
-    infile = open(infilename, 'r')
-    # strip out the header, table of contents, etc.
-    for i in range(61):
-        infile.readline()
-
-    full_text = []
-    # read the rest of the file line by line
-    for line in infile:
-        if line.startswith(u"End of the Project Gutenberg EBook"):
-            break
-        full_text.append(line)
-
-    # put all the lines together into one big string:
-    return u" ".join(full_text)
 
 
 def build_trigram(words):
