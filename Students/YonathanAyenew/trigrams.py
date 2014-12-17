@@ -10,27 +10,6 @@ import string
 
 data_source = u'sherlock.txt'
 
-# 
-# First open the file
-# 
-
-def read_in_data(data_source):
-
-    in_data = open(data_source, 'r')
-    # get rid of first 61 lines of Table of Contents and header.
-    for i in range(61):
-        in_data.readline()
-
-    rest_of_text = []
-    # read the rest of the file line by line
-    for line in in_data:
-        if line.startswith(u"End of the Project Gutenberg EBook"):
-            break
-        rest_of_text.append(line)
-
-    # combine lines together into one big string:
-    return " ".join(rest_of_text)
-
 
 def make_string(text):
 
@@ -79,11 +58,34 @@ def make_words(text):
 
     return words
 
+# 
+# d 
+# 
+
+def read_in_data(data_source):
+
+    in_data = open(data_source, 'r')
+    # get rid of first 61 lines of Table of Contents and header.
+    for i in range(61):
+        in_data.readline()
+
+    rest_of_text = []
+    # read the rest of the file line by line
+    for line in in_data:
+        if line.startswith(u"End of the Project Gutenberg EBook"):
+            break
+        rest_of_text.append(line)
+
+    # combine lines together into one big string:
+    return " ".join(rest_of_text)
 
 
+# 
+# Now Create the Trigram
+# 
 
 
-def build_trigram(words):
+def trigram_create(words):
     """build a trigram dict from the passed-in text"""
 
     # Dictionary for trigram results:
@@ -107,6 +109,10 @@ def build_trigram(words):
         #     word_pairs[pair] = [follower]
     return word_pairs
 
+
+# 
+# Build new text from pair of words that will act as a key
+# 
 
 def build_text(word_pairs):
 
@@ -143,7 +149,7 @@ if __name__ == "__main__":
 
     in_data = read_in_data(filename)
     words = make_words(in_data)
-    word_pairs = build_trigram(words)
+    word_pairs = trigram_create(words)
     new_text = build_text(word_pairs)
 
     print new_text
