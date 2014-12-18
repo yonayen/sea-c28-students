@@ -5,17 +5,22 @@
 
 from io import open
 import string
-# import sys
-# import random
+import sys
+# for if __name__== "__main__": block
+import random
+# for build_text method
+
 
 data_source = u'sherlock.txt'
 
 
+# 
+# clean up the text (remove punctuation etc)
+# 
+
 def make_string(text):
 
     """ create string with no punctuation and special characters. """
-
-    
 
     punctuation = string.punctuation.replace("'", "")
     # keep words with apostrophies
@@ -23,55 +28,37 @@ def make_string(text):
     punctuation = string.punctuation.replace("-", "")
     # keep words with hyphens
 
+    group = dict([(ord(c), None) for c in punctuation])
+
     text = text.lower()
     # universal lower-case
+
+    text = text.translate(group)
+    # punctuation removed
     
-    words = text.split()
+    string_words = text.split()
     # create words by splitting
 
+    string_words = [word for word in string_words if word != "'"]
+    # single quotes removed
 
-def make_words(text):
+    return string_words
 
-    """strips all the punctuation and other stuff from a string"""
-
-    # build a translation table for string.translate:
-    # there are other ways to do this:
-    #   a_word.strip() works well, too.
-
-    punctuation = unicode(string.punctuation)
-    punctuation = string.punctuation.replace("'", "")  # keep apostropies
-    punctuation = string.punctuation.replace("-", "")  # keep hyphenated words
-    table = dict([(ord(c), None) for c in punctuation])
-
-    # lower-case everything to remove that complication:
-    text = text.lower()
-
-    # remove punctuation
-    text = text.translate(table)
-
-    # split into words
-    words = text.split()
-
-    # remove the bare single quotes
-    # " ' " is both a quote and an apostrophe
-    words = [word for word in words if word != "'"]
-
-    return words
 
 # 
-# d 
+# Read data source to elminate begining and end that isn't useful
 # 
 
-def read_in_data(data_source):
+def in_data(data_source):
 
-    in_data = open(data_source, 'r')
-    # get rid of first 61 lines of Table of Contents and header.
+     # get rid of first 61 lines of Table of Contents and header.
+    file = open(data_source, 'r')
     for i in range(61):
-        in_data.readline()
+        file.readline()
 
+    # read the rest of the file line by line until the end
     rest_of_text = []
-    # read the rest of the file line by line
-    for line in in_data:
+    for line in file:
         if line.startswith(u"End of the Project Gutenberg EBook"):
             break
         rest_of_text.append(line)
@@ -84,74 +71,61 @@ def read_in_data(data_source):
 # Now Create the Trigram
 # 
 
-
-def trigram_create(words):
-    """build a trigram dict from the passed-in text"""
+def trigram_create(string_words):
+    """build a trigram dict from the text"""
 
     # Dictionary for trigram results:
-    # The keys will be all the word pairs
-    # The values will be a list of the words that follow each pair
+    # Using String_words from above -- Word pairs will for the key for the trigram, values will follow each pair
+    
     word_pairs = {}
 
     # loop through the words
-    for i in range(len(words) - 2):
-        pair = tuple(words[i:i+2])  # a tuple so it can be a key in the dict
-        follower = words[i+2]
-        word_pairs.setdefault(pair, []).append(follower)
+    for i in range(len(string_words) - 2):
+        pair = tuple(string_words[i:i+2])  #  tuple will be a key in the dict
+        value_follower = string_words[i+2]
+        word_pairs.setdefault(pair, []).append(value_follower)
 
-        # setdefault() returns the value if pair is already in the dict
-        #    if it's not, it adds it, setting the value to a an empty list
-        #    then it returns the list, which we then append the following
-        #    word to -- cleaner than:
-        # if pair in word_pairs:
-        #     word_pairs[pair].append(follower)
-        # else:
-        #     word_pairs[pair] = [follower]
+        
     return word_pairs
 
 
 # 
-# Build new text from pair of words that will act as a key
+# Create new text from pair of words that will act as a key
 # 
 
-def build_text(word_pairs):
+def create_text(word_pairs):
 
-    """build some new text from the word_pair dict supplied"""
+    """build new text from the word_pair dict above"""
 
-    new_text = []
+    new_form = []
     for i in range(30):  # do thirty sentences
         # pick a word pair to start the sentence
         sentence = list(random.choice(word_pairs.keys()))
 
         # now add a random number of additional words to the sentence
         for j in range(random.randint(2, 10)):
-            pair = tuple(sentence[-2:])
+             pair = tuple(sentence[-2:])
             sentence.append(random.choice(word_pairs[pair]))
-        # capitalize the first word:
-        sentence[0] = sentence[0].capitalize()
-        # Add the period
-        sentence[-1] += u"."
-        new_text.extend(sentence)
+        
+    new_form = " ".join(new_form)
 
-    new_text = " ".join(new_text)
-
-    return new_text
+    return new_form
 
 
 if __name__ == "__main__":
 
-    # get the filename from the command line
+    # get the_file from the command line
     try:
-        filename = sys.argv[1]
+        thefile = sys.argv[1]
     except IndexError:
-        print "You must pass in a filename"
+        print "Pass in the file"
         sys.exit(1)
 
-    in_data = read_in_data(filename)
-    words = make_words(in_data)
-    word_pairs = trigram_create(words)
-    new_text = build_text(word_pairs)
+    data = in_data(thefile)
+    string_words = make_string(data)
+    word_pairs = trigram_create(sting_words)
+    new_form = create_text(word_pairs)
 
-    print new_text
+    print new_form
 
 
