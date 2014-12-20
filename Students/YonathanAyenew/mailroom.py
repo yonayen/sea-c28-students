@@ -25,12 +25,42 @@ def start_prompt():
 def navigate_prompt():
     """ Navigate to Quit, 'Send a Thank You', or 'Create a Report' """
     user_response = start_prompt()
+    
     if user_response.lower() == u'q':
         quit() #quit the mailroom
+    
     elif user_response == u'1':
-        user_response = thank_you_prompt() # use this to create thank you email
+        user_response = thank_you() # use this to create thank you email
+    
     elif user_response == u'2':
-     
+        user_response = create_report() # create donor report
+    
+    else:
+        # invalid selection
+        print(u'Not a valid option, choose again.')
+        .....
+
+def thank_you():
+    """Prompt to (1) see list of donors; (2) donor name and donation amount and compose thank you email.  
+       Append new donor to list if user provides it. """
+    
+    if user_response.lower() == u'q':
+        quit() #quit the mailroom
+    
+    elif user_response == u's':    #Takes 
+        user_response = navigate_prompt()  #Takes user back to navigate_prompt
+
+    elif user_response.lower() == u'list': #Prints list of donors and returns to prompt
+        for name in Donor_list.keys():
+            print(u'{}'.format(name))
+        user_response = thank_you()
+        
+    else:
+        name, donation
+
+
+
+
 
 
 # if they type 'list' -- show list of donor names and reprompt
