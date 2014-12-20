@@ -14,13 +14,23 @@ Donor_list = {u'John' : [30.00, 10.00, 20.00],
 
 # Choose 'Send a Thank You Note' or 'Create a Report'
 def start_prompt():
+    """ Returns the input selected between 'Send a Thank You Note' and 'Create a Report' """
     try: 
-        user_response = raw_input("Choose one of following options: 'Send a Thank You' or 'Create a List' -->")
+        user_response = raw_input("\n 1:'Send a Thank You' \n 2:'Create a List' \n q: Quit -->")
     except (EOFError, KeyboardInterrupt):
         quit()
     else:
         return user_response.decode('utf-8') # Response in unicode format
- 
+
+def navigate_prompt():
+    """ Navigate to Quit, 'Send a Thank You', or 'Create a Report' """
+    user_response = start_prompt()
+    if user_response.lower() == u'q':
+        quit() #quit the mailroom
+    elif user_response == u'1':
+        user_response = thank_you_prompt() # use this to create thank you email
+    elif user_response == u'2':
+     
 
 
 # if they type 'list' -- show list of donor names and reprompt
