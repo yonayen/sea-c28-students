@@ -15,3 +15,29 @@ food_prefs.pop(u"Meat")
 print food_prefs
 
 # Add value for "icecream" with "chocolate" and print dict
+food_prefs[u'icecream'] = u'chocolate'
+print food_prefs
+
+# display keys and values
+
+print food_prefs.keys()
+print food_prefs.values()
+
+print u'chocolate' in food_prefs.values()
+
+# use dict constructor and zip to create dict of numbers from 0-15 and hex equiv.
+
+numbers = range(16)
+hexes = []
+for number in numbers: 
+    hexes.append(hex(number))
+
+hex_dict = dict(zip(numbers, hexes))
+
+print hex_dict
+
+
+
+
+
+
