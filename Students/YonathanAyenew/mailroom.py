@@ -47,7 +47,7 @@ def thank_you():
     if user_response.lower() == u'q':
         quit() #quit the mailroom
     
-    elif user_response == u's':    #Takes 
+    elif user_response == u's':     
         user_response = navigate_prompt()  #Takes user back to navigate_prompt
 
     elif user_response.lower() == u'list': #Prints list of donors and returns to prompt
@@ -56,25 +56,59 @@ def thank_you():
         user_response = thank_you()
         
     else:
-        name, donation
+        name, donation = name_donation(user_response) # Verify user inputted name
+        user_response = create_email(name, donation) # Create thank you email
+
+    return user_response
+
+
+def name_donation(name):
+    """ Show name of donor and respective donation amount. """
+    Donor_list.setdefault(name, []) # Will add new donor name to list
+    donation = new_donation() # ask for donation amount
+    Donor_list.get(name).append(donation)
+
+    return name, donation 
+
+def new_donation():
+    """ Return donation amount. """
+
+    prompt = u'What is the Donation amount? (\n q: Quit \n s: Start over) --> '
+    user_response = raw_input(prompt)
+
+    if user_response.lower() == 'q': # Quit Mailroom
+        quit()
+    elif user_response == u's': # Takes user back to navigation prompt
+        user_response = navigate_prompt()
+        return user_response
+    
+    else: #verify if input is a real number
+        try:
+            donation = float(user_response)
+        except ValueError:
+            print (u'Input not a number, please try again!')
+            donation = new_donation()
+        else:
+            donation = donation
+
+    return donation    
+
+def create_email(name, donation):
+    """ Compose Email from given template. """
+    
+    # The email template
+    template = u'{name}, thank you for your donation of ${donation}'.format(name, donation)
+    print (template)
+
+    user_response = navigate_prompt() # Start again from first prompt.
+    return user_response
+
+def create_report():
 
 
 
 
 
-
-# if they type 'list' -- show list of donor names and reprompt
-
-# if they type name not on list -- add to data structure and use it
-# if name is already on the list then use it
-
-# Once name is selected -- prompt for a donation amount
-
-# Verify that input is in fact a number -- reprompt if necessary
-
-# Once number is given -- add it to the donation history
-
-# Use string formatting to compose an email thanking donor for their donation
 
 # Print email to the terminal and return to original prompt (quit)
 
@@ -88,15 +122,7 @@ def thank_you():
 
 
 
-In [47]: d
-Out[47]: {u'something': u'a value'}
-In [48]: item_view = d.viewitems()
-In [49]: item_view
-Out[49]: dict_items([(u'something', u'a value')])
-In [50]: d['something else'] = u'another value'
 
-In [51]: item_view
-Out[51]: dict_items([('something else', u'another value'), (u'something', u'a value')])
 
 
 
