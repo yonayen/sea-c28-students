@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
+from __future__ import division
+from operator import itemgetter
 
 
 
@@ -104,42 +106,58 @@ def create_email(name, donation):
     return user_response
 
 def create_report():
+    """ Return report of the list of donors, average donation amount, 
+    number of donations and total donations. """
+    
+    matrix = []  # Where data will be displayed
+
+    for name in Donor_list:
+        donor = name
+        
+        donations = Donor_list[name] # list of donations (values in dict)
+        
+        total_donations = sum(donations) # sum of donations (values in dict)
+        
+        number_donations = len(donations) # Total number of donations
+
+        average_donation = total_donations / number_donations   # Average donation
+
+        matrix += [[donor, total_donations, number_donations, average_donation]]
+
+    # Sort the matrix by total donor amount in decending order.
+    edited_matrix = sorted(matrix, key = itemgetter(1), reverse = True)
+
+    # Titles for Matrix Columns
+    title = [u'Donor', u'Total Donations', u'Number of Donations', u'Average Donation']
+
+    print(u'{0:<20}{1:>20}{2:>30}{3:>30}'.format(title)
+    for content in range(len(matrix)):
+        args = [edited_matrix[content][0],
+                "${:.2f}".format(edited_matrix[content][1]),
+                edited_matrix[content][2],
+                "{:.2f}".format(edited_matrix[content][3])
+                ] 
+
+        # Right align in colums with dollar sign    
+        print(u"{0:<20}{1:>20}{2:>30}{3:>30}".format(*args))
+
+    user_response = navigate_prompt() # Goes back to first prompt
+    return user_response
 
 
 
 
 
 
-# Print email to the terminal and return to original prompt (quit)
-
-
-# IF 'CREATE A REPORT' is Selected
-# print list of donors sorted by historical donation amount; include donation amount
-
-# Donor name, total donated, number of donations, average donation, (all as values in each row)
-
-# Use string formatting to 
 
 
 
-
-
-
-
-In [26]: d = {'name': 'Brian', 'score': 42}
-
-In [27]: for k, v in d.items():
-   ....:     print("%s: %s" % (k,v))
-   ....:
-score: 42
-name: Brian
-
-
-
-try:
-    num_in = int(num_in)
-except ValueError:
-    print(u"Input must be an integer, try again.")
 
 
 if __name__ == '__main__':
+
+
+
+
+
+
