@@ -47,7 +47,82 @@ print food_prefs
 
 
 # 
-# sets s2, s3, s4 with numbers from 0-20
+# sets s2, s3, s4 with numbers from 0-20; divisible by 2, 3 and 4
+# 
+
+s2 = {i for i in range(21) if not i % 2}
+s3 = {i for i in range(21) if not i % 3}
+s4 = {i for i in range(21) if not i % 4}
+
+print s2
+print s3
+print s4
+
+# show if s3 is subset of s2
+print s3.issubset(s2) # False
+
+# show if s4 is subset of s2
+print s4.issubset(s2) # True
+
+
+
+# New set with 'Python' and add 'i' to set
+
+s = set(u'Python')
+s.add('i')
+
+print s
+
+
+# create frozenset with letters in 'marathon'
+
+fs = frozenset(u'marathon')
+
+# union/intersection of two sets
+
+print u'union:', s.union(fs)
+print u'intersection:', s.intersection(fs)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
