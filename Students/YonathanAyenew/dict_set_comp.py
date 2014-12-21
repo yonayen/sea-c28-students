@@ -27,14 +27,46 @@ print u'chocolate' in food_prefs.values()
 
 # use dict constructor and zip to create dict of numbers from 0-15 and hex equiv.
 
-numbers = range(16)
-hexes = []
-for number in numbers: 
-    hexes.append(hex(number))
+hexdecimal_dict = {i: hex(i) for i in range(16)}
+print hexdecimal_dict
 
-hex_dict = dict(zip(numbers, hexes))
 
-print hex_dict
+# using the food_prefs dict create new dict with the number of 'a's in each value 
+
+a_dict = {key: val.count(u"a") for key, val in food_prefs.items()}
+
+print a_dict
+
+
+# change the values 
+
+for key, val in food_prefs.items():
+    food_prefs[key] = val.count(u'a')
+
+print food_prefs
+
+
+# 
+# sets s2, s3, s4 with numbers from 0-20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
