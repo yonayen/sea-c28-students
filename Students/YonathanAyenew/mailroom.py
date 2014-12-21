@@ -145,17 +145,11 @@ def create_report():
     return user_response
 
 
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
 
+    # Begins mailroom prompt
+
+    user_response = navigate_prompt()
 
 
 
